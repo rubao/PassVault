@@ -38,6 +38,8 @@ class PassVault_Component_Registry_Registry
     {
         if ($this->hasReference($referenceName)) {
             return $this->references[$referenceName];
+        } else {
+            throw new PassVault_Component_Registry_Exception_InexistentReference($referenceName);
         }
     }
 }
