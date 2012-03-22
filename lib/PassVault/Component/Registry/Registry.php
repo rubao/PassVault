@@ -25,7 +25,7 @@ class PassVault_Component_Registry_Registry
     
     public static function getInstance()
     {
-        if (self::$instance == null) {
+        if (is_null(self::$instance)) {
             self::$instance = new PassVault_Component_Registry_Registry;
         }
         
@@ -49,13 +49,9 @@ class PassVault_Component_Registry_Registry
     public function get($referenceName)
     {
         if ($this->hasReference($referenceName)) {
-<<<<<<< HEAD
             return $this->getReferencesContainer()->offsetGet($referenceName);
-=======
-            return $this->references[$referenceName];
         } else {
             throw new PassVault_Component_Registry_Exception_InexistentReference($referenceName);
->>>>>>> e64e23cd1b2ef37ed6ea30bfecdb77304844b87f
         }
     }
 }
