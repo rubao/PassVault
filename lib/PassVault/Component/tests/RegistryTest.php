@@ -6,7 +6,7 @@ class PassVault_Component_RegistryTest extends PHPUnit_Framework_TestCase
 {
     public function testShouldAddAnObjectReferenceToRegistry()
     {
-        $registry = new PassVault_Component_Registry_Registry;
+        $registry = PassVault_Component_Registry_Registry::getInstance();
         $object = new stdClass;
         $registry->register('object', $object);
         
@@ -15,7 +15,7 @@ class PassVault_Component_RegistryTest extends PHPUnit_Framework_TestCase
     
     public function testShouldRemoveObjectReferenceToRegistry()
     {
-        $registry = new PassVault_Component_Registry_Registry;
+        $registry = PassVault_Component_Registry_Registry::getInstance();
         $object = new stdClass;
         $registry->register('object', $object);
         
@@ -30,7 +30,7 @@ class PassVault_Component_RegistryTest extends PHPUnit_Framework_TestCase
      */
     public function testShouldThrowAnExceptionWhenTryToUnregisterInexistentReference()
     {
-        $registry = new PassVault_Component_Registry_Registry;
+        $registry = PassVault_Component_Registry_Registry::getInstance();
         $registry->unregister('object');
     }
 }

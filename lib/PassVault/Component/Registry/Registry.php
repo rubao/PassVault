@@ -5,6 +5,9 @@ require_once dirname(__FILE__)."/Exception/InexistentReference.php";
 class PassVault_Component_Registry_Registry
 {
     private $references = null;
+    private static $instance = null;
+    
+    protected function __construct() {}
     
     private function getReferencesContainer()
     {
@@ -18,6 +21,15 @@ class PassVault_Component_Registry_Registry
     private function hasReference($referenceName)
     {
         return $this->getReferencesContainer()->offsetExists($referenceName);
+    }
+    
+    public static function getInstance()
+    {
+        if (self::$instance == null) {
+            self::$instance = new PassVault_Component_Registry_Registry;
+        }
+        
+        return self::$instance;
     }
     
     public function register($referenceName, $object)
@@ -37,7 +49,7 @@ class PassVault_Component_Registry_Registry
     public function get($referenceName)
     {
         if ($this->hasReference($referenceName)) {
-            return $this->references[$referenceName];
+            return $this->getReferencesContainer()->offsetGet($referenceName);
         }
     }
 }
