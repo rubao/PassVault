@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__)."/Exception/InexistentReference.php";
+require_once __DIR__."/Exception/InexistentReference.php";
 
 class PassVault_Component_Registry_Registry
 {
