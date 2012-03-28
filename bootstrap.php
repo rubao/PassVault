@@ -1,7 +1,7 @@
 <?php
 
-require_once dirname(__FILE__)."/lib/Twig/Autoloader.php";
-require_once dirname(__FILE__)."/lib/PassVault/Component/Registry/Registry.php";
+require_once __DIR__."/lib/Twig/Autoloader.php";
+require_once __DIR__."/lib/PassVault/Component/Registry/Registry.php";
 
 $registry = PassVault_Component_Registry_Registry::getInstance();
 
