@@ -1,0 +1,7 @@
+{
+    "name": "PassVault",
+    "description": "A simple vault to store passwords using MongoDb and Twig",
+    "require": {
+        "twig/twig": "1.6.*"
+    }
+}
