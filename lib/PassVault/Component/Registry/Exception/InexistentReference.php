@@ -1,6 +1,8 @@
 <?php
 
-class PassVault_Component_Registry_Exception_InexistentReference extends RuntimeException
+namespace PassVault\Component\Registry\Exception;
+
+class InexistentReference extends \RuntimeException
 {
     public function __construct($reference)
     {
